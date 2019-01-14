@@ -39,7 +39,7 @@
       query                 Поисковый запрос
     
     optional arguments:
-      -h, ----help            show this help message and exit
+      -h, --help            show this help message and exit
       -u OUTPUT, --output OUTPUT
                             Название cvs файла для вывода (например output.csv)
       -s {date,price,price_desc}, --sortby {date,price,price_desc}
