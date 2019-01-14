@@ -11,12 +11,12 @@
 ## Модуль avito_parser (avito_parser.py)
 
 Все объявления с "трактор мтз" в названии, отсортированные по дате:
-```
+
     from avito_parser import get_all_ads
     
     for ad in get_all_ads('трактор мтз', sort_by='date', by_title=True):
         print(ad)
-```
+
 
 Вывод:
 
@@ -29,39 +29,38 @@
 
 ## Интерфейс командной строки (avito_parser_cli.py)
 
-```python3 avito_parser_cli.py -h
-usage: avito_parser_cli.py [-h] [-u OUTPUT] [-s {date,price,price_desc}] [-t]
-                           [-f] [-w {private,company}] [-m MINPRICE]
-                           [-M MAXPRICE] [-d STARTDATE] [-e ENDDATE] [-a]
-                           query
-
-positional arguments:
-  query                 Поисковый запрос
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -u OUTPUT, --output OUTPUT
-                        Название cvs файла для вывода (например output.csv)
-  -s {date,price,price_desc}, --sortby {date,price,price_desc}
-                        date -- сортировка по дате; price -- сортировка по
-                        цене; price_desc -- сортировка по убыванию цены
-  -t, --bytitle         Поиск только в названиях объявлений
-  -f, --withimages      Только объявления с картинками
-  -w {private,company}, --owner {private,company}
-                        private -- только частные объявления; company –-
-                        только объявления принадлежащие компаниям
-  -m MINPRICE, --minprice MINPRICE
-                        Минимальная цена
-  -M MAXPRICE, --maxprice MAXPRICE
-                        Максимальная цена
-  -d STARTDATE, --startdate STARTDATE
-                        Только объявления новее этой даты; Формат – 2019-01-10
-                        или 2019-01-10 15:29
-  -e ENDDATE, --enddate ENDDATE
-                        Только объявления созданные до этой даты; Формат –
-                        2019-01-10 или 2019-01-10 15:29
-  -a, --statistics      Выводить топ 5 объявлений и общее количество
-```
+    python3 avito_parser_cli.py -h
+    usage: avito_parser_cli.py [-h] [-u OUTPUT] [-s {date,price,price_desc}] [-t]
+                               [-f] [-w {private,company}] [-m MINPRICE]
+                               [-M MAXPRICE] [-d STARTDATE] [-e ENDDATE] [-a]
+                               query
+    
+    positional arguments:
+      query                 Поисковый запрос
+    
+    optional arguments:
+      -h, ----help            show this help message and exit
+      -u OUTPUT, --output OUTPUT
+                            Название cvs файла для вывода (например output.csv)
+      -s {date,price,price_desc}, --sortby {date,price,price_desc}
+                            date -- сортировка по дате; price -- сортировка по
+                            цене; price_desc -- сортировка по убыванию цены
+      -t, --bytitle         Поиск только в названиях объявлений
+      -f, --withimages      Только объявления с картинками
+      -w {private,company}, --owner {private,company}
+                            private -- только частные объявления; company –-
+                            только объявления принадлежащие компаниям
+      -m MINPRICE, --minprice MINPRICE
+                            Минимальная цена
+      -M MAXPRICE, --maxprice MAXPRICE
+                            Максимальная цена
+      -d STARTDATE, --startdate STARTDATE
+                            Только объявления новее этой даты; Формат – 2019-01-10
+                            или 2019-01-10 15:29
+      -e ENDDATE, --enddate ENDDATE
+                            Только объявления созданные до этой даты; Формат –
+                            2019-01-10 или 2019-01-10 15:29
+      -a, --statistics      Выводить топ 5 объявлений и общее количество
 
 Все объявления с "трактор мтз" в названии, с минимальной ценой 300000₽, отсортированные по дате:
 
