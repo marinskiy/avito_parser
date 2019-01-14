@@ -2,6 +2,8 @@ import argparse
 from datetime import datetime
 from csv import DictWriter
 from avito_parser import get_all_ads
+import os
+
 
 def to_date(string):
     try:
@@ -22,7 +24,8 @@ def print_ad_info(ad, number):
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('query', type=str, help='Поисковый запрос')
-    parser.add_argument('-u', '--output', type=str, default='output.csv')
+    parser.add_argument('-u', '--output', type=str, default='output.csv',
+                        help='Название cvs файла для вывода (например output.csv)')
     parser.add_argument('-s', '--sortby', type=str, choices=['date', 'price', 'price_desc'],
                         default=None,
                         help='''date -- сортировка по дате;
@@ -56,6 +59,7 @@ if __name__ == '__main__':
     fieldnames = ['Title', 'Link', 'Price', 'Date']
     ad_num = 0
     with open(args.output, "w", newline='') as out_file:
+        print(os.path.abspath(args.output))
         writer = DictWriter(out_file, delimiter=',', fieldnames=fieldnames)
         writer.writeheader()
         for ad in get_all_ads(args.query, sort_by=args.sortby, by_title=args.bytitle,
