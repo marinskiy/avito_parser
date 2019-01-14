@@ -11,11 +11,12 @@
 ## Модуль avito_parser (avito_parser.py)
 
 Все объявления с "трактор мтз" в названии, отсортированные по дате:
-
+```
     from avito_parser import get_all_ads
     
     for ad in get_all_ads('трактор мтз', sort_by='date', by_title=True):
         print(ad)
+```
 
 Вывод:
 
